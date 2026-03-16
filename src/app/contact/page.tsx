@@ -53,17 +53,6 @@ export default function Contact() {
               </li>
               <li>No. 23 Lincoln Road, L.I.S Gweru</li>
             </ul>
-            <h2 className="mt-8 text-lg font-semibold text-zinc-900 dark:text-zinc-50">
-              Banking Details
-            </h2>
-            <ul className="mt-3 space-y-1 text-sm text-zinc-600 dark:text-zinc-400">
-              <li>Bank: FBC Bank</li>
-              <li>Branch: Gweru</li>
-              <li>Nostro: 4490122252019</li>
-              <li>ZWL: 5790122252019</li>
-              <li>Account: Infinite Hardware and Electrical</li>
-              <li>Vendor No: 719287</li>
-            </ul>
           </div>
           <form
             onSubmit={handleSubmit}
