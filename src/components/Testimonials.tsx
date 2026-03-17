@@ -41,7 +41,7 @@ export default function Testimonials() {
               className="animate-fade-in-up rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900 sm:p-8"
               style={{ animationDelay: `${i * 100}ms`, animationFillMode: "both" }}
             >
-              <Quote className="h-10 w-10 text-zinc-300 transition-colors duration-300 dark:text-zinc-600" aria-hidden />
+              <Quote className="h-10 w-10 text-brand-blue-muted transition-colors duration-300 dark:text-brand-purple/60" aria-hidden />
               <p className="mt-4 text-zinc-600 dark:text-zinc-400">&ldquo;{t.quote}&rdquo;</p>
               <div className="mt-6 border-t border-zinc-200 pt-4 dark:border-zinc-700">
                 <p className="font-semibold text-zinc-900 dark:text-zinc-50">

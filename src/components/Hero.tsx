@@ -9,9 +9,9 @@ export default function Hero() {
         className="absolute inset-0 -z-10 bg-[length:120%_120%] bg-[position:70%_30%] opacity-100 transition-opacity duration-500 dark:opacity-0"
         style={{
           backgroundImage: `
-            radial-gradient(ellipse 80% 60% at 50% 0%, rgba(251, 191, 36, 0.12), transparent 55%),
-            radial-gradient(ellipse 60% 40% at 85% 20%, rgba(59, 130, 246, 0.08), transparent 50%),
-            radial-gradient(ellipse 50% 30% at 15% 40%, rgba(34, 197, 94, 0.06), transparent 45%),
+            radial-gradient(ellipse 80% 60% at 50% 0%, rgba(82, 74, 111, 0.1), transparent 55%),
+            radial-gradient(ellipse 60% 40% at 85% 20%, rgba(110, 181, 224, 0.12), transparent 50%),
+            radial-gradient(ellipse 50% 30% at 15% 40%, rgba(184, 184, 184, 0.08), transparent 45%),
             linear-gradient(to bottom, rgb(250 250 250), rgb(255 255 255))
           `,
         }}
@@ -21,18 +21,18 @@ export default function Hero() {
         className="absolute inset-0 -z-10 bg-[length:120%_120%] bg-[position:70%_30%] opacity-0 transition-opacity duration-500 dark:opacity-100"
         style={{
           backgroundImage: `
-            radial-gradient(ellipse 80% 60% at 50% 0%, rgba(251, 191, 36, 0.15), transparent 55%),
-            radial-gradient(ellipse 60% 40% at 85% 20%, rgba(59, 130, 246, 0.1), transparent 50%),
+            radial-gradient(ellipse 80% 60% at 50% 0%, rgba(107, 95, 138, 0.15), transparent 55%),
+            radial-gradient(ellipse 60% 40% at 85% 20%, rgba(126, 190, 232, 0.12), transparent 50%),
             linear-gradient(to bottom, rgb(10 10 10), rgb(24 24 27))
           `,
         }}
         aria-hidden
       />
-      <div className="absolute inset-0 -z-10 bg-[image:radial-gradient(circle_at_50%_120%,rgba(120,119,198,0.05),transparent_50%)] dark:bg-[image:radial-gradient(circle_at_50%_120%,rgba(120,119,198,0.08),transparent_50%)]" aria-hidden />
+      <div className="absolute inset-0 -z-10 bg-[image:radial-gradient(circle_at_50%_120%,rgba(82,74,111,0.06),transparent_50%)] dark:bg-[image:radial-gradient(circle_at_50%_120%,rgba(110,181,224,0.08),transparent_50%)]" aria-hidden />
       <Container className="relative">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="animate-fade-in-up inline-flex items-center gap-2 rounded-full border border-zinc-200/80 bg-white/90 px-4 py-2 text-sm font-medium text-zinc-600 shadow-sm backdrop-blur-sm transition-colors duration-300 dark:border-zinc-700/80 dark:bg-zinc-900/90 dark:text-zinc-400">
-            <Sparkles className="h-4 w-4 text-amber-500 animate-shimmer" aria-hidden />
+          <div className="animate-fade-in-up inline-flex items-center gap-2 rounded-full border border-brand-blue-muted/60 bg-white/90 px-4 py-2 text-sm font-medium text-brand-purple shadow-sm backdrop-blur-sm transition-colors duration-300 dark:border-brand-blue/40 dark:bg-zinc-900/90 dark:text-brand-blue">
+            <Sparkles className="h-4 w-4 text-brand-blue animate-shimmer dark:text-brand-blue-muted" aria-hidden />
             Trusted across Zimbabwe since 2019
           </div>
           <h1 className="mt-6 animate-fade-in-up text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 [animation-delay:100ms] [animation-fill-mode:both] sm:text-4xl md:text-5xl lg:text-6xl">

@@ -11,7 +11,7 @@ export default function SectionTitle({
 }: SectionTitleProps) {
   return (
     <div className={`mb-10 text-center sm:mb-12 md:mb-16 ${className}`}>
-      <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-3xl md:text-4xl">
+      <h2 className="border-b-2 border-brand-purple/30 pb-2 text-2xl font-bold tracking-tight text-zinc-900 dark:border-brand-blue/40 dark:text-zinc-50 sm:text-3xl md:pb-3 md:text-4xl">
         {title}
       </h2>
       {subtitle && (

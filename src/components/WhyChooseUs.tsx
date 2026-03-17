@@ -44,7 +44,7 @@ export default function WhyChooseUs() {
               className="group animate-fade-in-up rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-zinc-200/40 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:shadow-zinc-950/50 sm:p-8"
               style={{ animationDelay: `${i * 80}ms`, animationFillMode: "both" }}
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-100 text-zinc-700 transition-all duration-300 group-hover:scale-105 group-hover:bg-emerald-500/10 group-hover:text-emerald-600 dark:bg-zinc-800 dark:text-zinc-300 dark:group-hover:bg-emerald-500/20 dark:group-hover:text-emerald-400">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-muted/20 text-brand-purple transition-all duration-300 group-hover:scale-105 group-hover:bg-brand-blue/20 group-hover:text-brand-purple dark:bg-brand-purple/20 dark:text-brand-blue dark:group-hover:bg-brand-blue/30 dark:group-hover:text-brand-blue-muted">
                 <feature.icon className="h-6 w-6" aria-hidden />
               </div>
               <h3 className="mt-4 text-lg font-semibold text-zinc-900 dark:text-zinc-50">

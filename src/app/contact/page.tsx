@@ -66,9 +66,9 @@ export default function Contact() {
               <li>
                 <a
                   href="mailto:enquiries@ihe.co.zw"
-                  className="flex items-center gap-3 transition-colors hover:text-zinc-900 dark:hover:text-zinc-50"
+                  className="flex items-center gap-3 transition-colors hover:text-brand-purple dark:hover:text-brand-blue"
                 >
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-800">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-blue-muted/40 text-brand-purple dark:bg-brand-purple/30 dark:text-brand-blue">
                     <Mail className="h-5 w-5" aria-hidden />
                   </span>
                   enquiries@ihe.co.zw
@@ -77,9 +77,9 @@ export default function Contact() {
               <li>
                 <a
                   href="tel:+263776339832"
-                  className="flex items-center gap-3 transition-colors hover:text-zinc-900 dark:hover:text-zinc-50"
+                  className="flex items-center gap-3 transition-colors hover:text-brand-purple dark:hover:text-brand-blue"
                 >
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-800">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-blue-muted/40 text-brand-purple dark:bg-brand-purple/30 dark:text-brand-blue">
                     <Phone className="h-5 w-5" aria-hidden />
                   </span>
                   +263 776 339832
@@ -88,16 +88,16 @@ export default function Contact() {
               <li>
                 <a
                   href="tel:+263712167281"
-                  className="flex items-center gap-3 transition-colors hover:text-zinc-900 dark:hover:text-zinc-50"
+                  className="flex items-center gap-3 transition-colors hover:text-brand-purple dark:hover:text-brand-blue"
                 >
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-800">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-blue-muted/40 text-brand-purple dark:bg-brand-purple/30 dark:text-brand-blue">
                     <Phone className="h-5 w-5" aria-hidden />
                   </span>
                   +263 712 167281
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-800">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-blue-muted/40 text-brand-purple dark:bg-brand-purple/30 dark:text-brand-blue">
                   <MapPin className="h-5 w-5" aria-hidden />
                 </span>
                 <span>No. 23 Lincoln Road, L.I.S Gweru</span>
@@ -122,7 +122,7 @@ export default function Contact() {
                 onChange={(e) => setName(e.target.value)}
                 required
                 disabled={status === "loading"}
-                className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 text-zinc-900 placeholder-zinc-500 transition-colors focus:border-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-500/20 disabled:opacity-60 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder-zinc-400"
+                className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 text-zinc-900 placeholder-zinc-500 transition-colors focus:border-brand-purple focus:outline-none focus:ring-2 focus:ring-brand-purple/25 dark:focus:border-brand-blue dark:focus:ring-brand-blue/25 disabled:opacity-60 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder-zinc-400"
                 placeholder="Your name"
               />
             </div>
@@ -140,7 +140,7 @@ export default function Contact() {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 disabled={status === "loading"}
-                className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 text-zinc-900 placeholder-zinc-500 transition-colors focus:border-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-500/20 disabled:opacity-60 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder-zinc-400"
+                className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 text-zinc-900 placeholder-zinc-500 transition-colors focus:border-brand-purple focus:outline-none focus:ring-2 focus:ring-brand-purple/25 dark:focus:border-brand-blue dark:focus:ring-brand-blue/25 disabled:opacity-60 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder-zinc-400"
                 placeholder="your@email.com"
               />
             </div>
@@ -158,7 +158,7 @@ export default function Contact() {
                 required
                 rows={5}
                 disabled={status === "loading"}
-                className="w-full resize-y rounded-lg border border-zinc-300 bg-white px-4 py-3 text-zinc-900 placeholder-zinc-500 transition-colors focus:border-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-500/20 disabled:opacity-60 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder-zinc-400"
+                className="w-full resize-y rounded-lg border border-zinc-300 bg-white px-4 py-3 text-zinc-900 placeholder-zinc-500 transition-colors focus:border-brand-purple focus:outline-none focus:ring-2 focus:ring-brand-purple/25 dark:focus:border-brand-blue dark:focus:ring-brand-blue/25 disabled:opacity-60 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder-zinc-400"
                 placeholder="Your message..."
               />
             </div>

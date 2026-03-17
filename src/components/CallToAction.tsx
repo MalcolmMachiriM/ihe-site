@@ -6,9 +6,9 @@ export default function CallToAction() {
   return (
     <section className="py-16 sm:py-20 md:py-24">
       <Container>
-        <div className="relative overflow-hidden rounded-3xl bg-zinc-900 px-6 py-14 text-center shadow-xl transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/10 dark:bg-zinc-800 sm:px-10 sm:py-16 md:px-12 md:py-20">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(251,191,36,0.15),transparent)] pointer-events-none" aria-hidden />
-          <div className="relative mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-white transition-transform duration-300 hover:scale-110">
+        <div className="relative overflow-hidden rounded-3xl bg-brand-purple px-6 py-14 text-center shadow-xl transition-all duration-300 hover:shadow-2xl hover:shadow-brand-blue/20 dark:bg-brand-purple-hover sm:px-10 sm:py-16 md:px-12 md:py-20">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(110,181,224,0.2),transparent)] pointer-events-none" aria-hidden />
+          <div className="relative mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-blue/30 text-white transition-transform duration-300 hover:scale-110">
             <MessageCircle className="h-8 w-8" aria-hidden />
           </div>
           <h2 className="relative mt-6 text-2xl font-bold tracking-tight text-white sm:text-3xl md:text-4xl">

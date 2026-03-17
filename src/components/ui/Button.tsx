@@ -23,11 +23,11 @@ type ButtonProps = ButtonAsButton | ButtonAsLink;
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-zinc-900 text-white shadow-md hover:bg-zinc-800 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-100",
+    "bg-brand-purple text-white shadow-md hover:bg-brand-purple-hover dark:bg-brand-purple dark:hover:bg-brand-purple-hover",
   secondary:
-    "bg-zinc-100 text-zinc-900 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700",
+    "bg-brand-blue-muted/30 text-brand-purple hover:bg-brand-blue-muted/50 dark:bg-brand-purple/20 dark:text-brand-blue dark:hover:bg-brand-purple/30",
   outline:
-    "border-2 border-zinc-900 bg-transparent text-zinc-900 hover:bg-zinc-900 hover:text-white dark:border-zinc-100 dark:text-zinc-100 dark:hover:bg-zinc-100 dark:hover:text-zinc-900",
+    "border-2 border-brand-purple bg-transparent text-brand-purple hover:bg-brand-purple hover:text-white dark:border-brand-blue dark:text-brand-blue dark:hover:bg-brand-blue dark:hover:text-zinc-900",
 };
 
 export default function Button({
@@ -37,7 +37,7 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-zinc-400 focus:ring-offset-2 dark:focus:ring-zinc-500 dark:focus:ring-offset-zinc-900";
+    "inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-brand-purple/40 focus:ring-offset-2 dark:focus:ring-brand-blue/40 dark:focus:ring-offset-zinc-900";
   const styles = `${baseStyles} ${variantStyles[variant]} ${className}`;
 
   if ("href" in props && props.href) {

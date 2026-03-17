@@ -20,7 +20,7 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-[1200px] items-center justify-between px-4 py-4 sm:px-6 md:px-8">
         <Link
           href="/"
-          className="flex items-center gap-2 text-xl font-bold tracking-tight text-zinc-900 transition-opacity duration-200 hover:opacity-80 dark:text-zinc-50"
+          className="flex items-center gap-2 text-xl font-bold tracking-tight text-brand-purple transition-colors duration-200 hover:text-brand-purple-hover dark:text-brand-blue dark:hover:text-brand-blue-muted"
         >
           IHE
         </Link>
@@ -30,7 +30,7 @@ export default function Navbar() {
             <li key={href}>
               <Link
                 href={href}
-                className="flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium text-zinc-700 transition-colors duration-200 hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50"
+                className="flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium text-zinc-700 transition-colors duration-200 hover:bg-brand-blue-muted/20 hover:text-brand-purple dark:text-zinc-300 dark:hover:bg-brand-purple/20 dark:hover:text-brand-blue"
               >
                 <Icon className="h-4 w-4 shrink-0" aria-hidden />
                 {label}
@@ -69,7 +69,7 @@ export default function Navbar() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="flex items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium text-zinc-700 transition-colors duration-200 hover:bg-white hover:text-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50"
+                    className="flex items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium text-zinc-700 transition-colors duration-200 hover:bg-brand-blue-muted/20 hover:text-brand-purple dark:text-zinc-300 dark:hover:bg-brand-purple/20 dark:hover:text-brand-blue"
                     onClick={() => setMobileOpen(false)}
                   >
                     <Icon className="h-4 w-4 shrink-0" aria-hidden />

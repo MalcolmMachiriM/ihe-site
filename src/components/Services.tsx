@@ -44,7 +44,7 @@ export default function Services() {
               className="group animate-fade-in-up rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-zinc-200/50 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-zinc-700 dark:hover:shadow-zinc-950/50 sm:p-8"
               style={{ animationDelay: `${i * 80}ms`, animationFillMode: "both" }}
             >
-              <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-zinc-100 text-zinc-700 shadow-inner transition-all duration-300 group-hover:scale-110 group-hover:bg-amber-500/10 group-hover:text-amber-600 dark:bg-zinc-800 dark:text-zinc-300 dark:group-hover:bg-amber-500/20 dark:group-hover:text-amber-400">
+              <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-brand-blue-muted/30 text-brand-purple shadow-inner transition-all duration-300 group-hover:scale-110 group-hover:bg-brand-blue/20 group-hover:text-brand-purple dark:bg-brand-purple/20 dark:text-brand-blue dark:group-hover:bg-brand-blue/30 dark:group-hover:text-brand-blue-muted">
                 <service.icon className="h-7 w-7" aria-hidden />
               </div>
               <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">

@@ -17,13 +17,13 @@ const socialPlaceholders = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-zinc-200 bg-zinc-50 py-12 transition-colors duration-300 dark:border-zinc-800 dark:bg-zinc-950 sm:py-14 md:py-16">
+    <footer className="border-t-4 border-t-brand-purple/50 border-zinc-200 bg-zinc-50 py-12 transition-colors duration-300 dark:border-t-brand-blue/50 dark:border-zinc-800 dark:bg-zinc-950 sm:py-14 md:py-16">
       <Container>
         <div className="grid gap-10 sm:gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-16">
           <div className="lg:col-span-2">
             <Link
               href="/"
-              className="text-xl font-bold tracking-tight text-zinc-900 transition-opacity hover:opacity-80 dark:text-zinc-50"
+              className="text-xl font-bold tracking-tight text-brand-purple transition-colors hover:text-brand-purple-hover dark:text-brand-blue dark:hover:text-brand-blue-muted"
             >
               Infinite Hardware & Electrical
             </Link>
@@ -43,7 +43,7 @@ export default function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-sm text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50"
+                    className="text-sm text-zinc-600 transition-colors hover:text-brand-purple dark:text-zinc-400 dark:hover:text-brand-blue"
                   >
                     {label}
                   </Link>
@@ -59,7 +59,7 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:enquiries@ihe.co.zw"
-                  className="flex items-center gap-2 transition-colors hover:text-zinc-900 dark:hover:text-zinc-50"
+                  className="flex items-center gap-2 transition-colors hover:text-brand-purple dark:hover:text-brand-blue"
                 >
                   <Mail className="h-4 w-4 shrink-0" aria-hidden />
                   enquiries@ihe.co.zw
@@ -68,7 +68,7 @@ export default function Footer() {
               <li>
                 <a
                   href="tel:+263776339832"
-                  className="flex items-center gap-2 transition-colors hover:text-zinc-900 dark:hover:text-zinc-50"
+                  className="flex items-center gap-2 transition-colors hover:text-brand-purple dark:hover:text-brand-blue"
                 >
                   <Phone className="h-4 w-4 shrink-0" aria-hidden />
                   +263 776 339832
@@ -77,7 +77,7 @@ export default function Footer() {
               <li>
                 <a
                   href="tel:+263712167281"
-                  className="flex items-center gap-2 transition-colors hover:text-zinc-900 dark:hover:text-zinc-50"
+                  className="flex items-center gap-2 transition-colors hover:text-brand-purple dark:hover:text-brand-blue"
                 >
                   <Phone className="h-4 w-4 shrink-0" aria-hidden />
                   +263 712 167281
@@ -97,7 +97,7 @@ export default function Footer() {
                   <a
                     href={href}
                     aria-label={label}
-                    className="flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-200 text-zinc-600 transition-all duration-200 hover:scale-105 hover:bg-zinc-300 hover:text-zinc-900 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700 dark:hover:text-zinc-50"
+                    className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-blue-muted/40 text-brand-purple transition-all duration-200 hover:scale-105 hover:bg-brand-purple/20 hover:text-brand-purple-hover dark:bg-brand-purple/20 dark:text-brand-blue dark:hover:bg-brand-blue/30 dark:hover:text-brand-blue-muted"
                   >
                     <Icon className="h-5 w-5" />
                   </a>
