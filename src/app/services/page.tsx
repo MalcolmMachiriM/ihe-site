@@ -1,6 +1,38 @@
+import Image from "next/image";
 import Container from "../../components/ui/Container";
 
-export default function Services() {
+const serviceSections = [
+  {
+    title: "Hardware and Tools",
+    description:
+      "High-quality hardware and tools including building materials, welding equipment, plumbing supplies, drills, hammers, crushers, industrial and mining tools and associated equipment.",
+    image: "/images/toolbox.jpg",
+    imageAlt: "Hardware and tools - professional equipment",
+  },
+  {
+    title: "Electrical Products",
+    description:
+      "Full range of electrical cables, lighting, motors, pumps, welding machinery, solar lights, security systems, inverters, power tools, AC and DC motors, cabling, magnetic separators and floatation machines.",
+    image: "/images/solar.jpg",
+    imageAlt: "Electrical and solar solutions",
+  },
+  {
+    title: "Software Solutions",
+    description:
+      "In-house developers and consultants for asset management, data entry, accounting, ERP, audit and event management systems, websites and custom software according to client needs.",
+    image: "/images/software.jpg",
+    imageAlt: "Software solutions and development",
+  },
+  {
+    title: "Safety Equipment",
+    description:
+      "PPE and safety equipment including overalls, boots, gloves, eyewear, masks, helmets and all related safety products.",
+    image: "/images/helmet.jpg",
+    imageAlt: "Safety equipment and PPE",
+  },
+];
+
+export default function ServicesPage() {
   return (
     <div className="py-16">
       <Container>
@@ -13,45 +45,30 @@ export default function Services() {
           meet the needs of professionals, industry and DIY enthusiasts.
         </p>
         <div className="mt-12 grid gap-8 sm:grid-cols-2">
-          <div className="rounded-2xl border border-zinc-200 bg-white p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
-            <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
-              Hardware and Tools
-            </h2>
-            <p className="mt-4 text-zinc-600 dark:text-zinc-400">
-              High-quality hardware and tools including building materials, welding
-              equipment, plumbing supplies, drills, hammers, crushers, industrial
-              and mining tools and associated equipment.
-            </p>
-          </div>
-          <div className="rounded-2xl border border-zinc-200 bg-white p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
-            <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
-              Electrical Products
-            </h2>
-            <p className="mt-4 text-zinc-600 dark:text-zinc-400">
-              Full range of electrical cables, lighting, motors, pumps, welding
-              machinery, solar lights, security systems, inverters, power tools,
-              AC and DC motors, cabling, magnetic separators and floatation machines.
-            </p>
-          </div>
-          <div className="rounded-2xl border border-zinc-200 bg-white p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
-            <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
-              Software Solutions
-            </h2>
-            <p className="mt-4 text-zinc-600 dark:text-zinc-400">
-              In-house developers and consultants for asset management, data entry,
-              accounting, ERP, audit and event management systems, websites and
-              custom software according to client needs.
-            </p>
-          </div>
-          <div className="rounded-2xl border border-zinc-200 bg-white p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
-            <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
-              Safety Equipment
-            </h2>
-            <p className="mt-4 text-zinc-600 dark:text-zinc-400">
-              PPE and safety equipment including overalls, boots, gloves, eyewear,
-              masks, helmets and all related safety products.
-            </p>
-          </div>
+          {serviceSections.map((section) => (
+            <div
+              key={section.title}
+              className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
+            >
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-zinc-200 dark:bg-zinc-800">
+                <Image
+                  src={section.image}
+                  alt={section.imageAlt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                />
+              </div>
+              <div className="p-8">
+                <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+                  {section.title}
+                </h2>
+                <p className="mt-4 text-zinc-600 dark:text-zinc-400">
+                  {section.description}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </Container>
     </div>

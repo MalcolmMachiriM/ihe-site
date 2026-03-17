@@ -51,6 +51,36 @@ export default function About() {
             </p>
           </div>
         </div>
+        <div className="mt-16">
+          <h2 className="mb-6 text-2xl font-semibold text-zinc-900 dark:text-zinc-50">
+            Our product range
+          </h2>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:gap-4">
+            {[
+              { src: "/images/grinder.jpg", alt: "Power tools and grinders" },
+              { src: "/images/testmeter.jpg", alt: "Electrical testing equipment" },
+              { src: "/images/reflectors.jpg", alt: "Safety reflectors and visibility gear" },
+              { src: "/images/engineering.jpg", alt: "Engineering and industrial supplies" },
+              { src: "/images/paint.jpg", alt: "Paints and coatings" },
+              { src: "/images/bolts.jpg", alt: "Fasteners and hardware" },
+              { src: "/images/man-electrical-fuses.jpg", alt: "Electrical components and fuses" },
+              { src: "/images/store-pliers.jpg", alt: "Hand tools and pliers" },
+            ].map(({ src, alt }) => (
+              <div
+                key={src}
+                className="relative aspect-square overflow-hidden rounded-xl bg-zinc-200 dark:bg-zinc-800"
+              >
+                <Image
+                  src={src}
+                  alt={alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
       </Container>
     </div>
   );
