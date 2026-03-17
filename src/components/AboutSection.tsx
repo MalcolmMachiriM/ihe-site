@@ -1,4 +1,5 @@
-import { Target, ImageIcon } from "lucide-react";
+import Image from "next/image";
+import { Target } from "lucide-react";
 import Container from "./ui/Container";
 import SectionTitle from "./ui/SectionTitle";
 
@@ -40,10 +41,13 @@ export default function AboutSection() {
           <div
             className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-zinc-200 shadow-lg animate-fade-in-up dark:bg-zinc-800 [animation-delay:150ms] [animation-fill-mode:both]"
           >
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-zinc-400 dark:text-zinc-500">
-              <ImageIcon className="h-12 w-12" aria-hidden />
-              <span className="text-sm font-medium">Image placeholder</span>
-            </div>
+            <Image
+              src="/images/team-meeting.jpg"
+              alt="IHE team collaborating on solutions for hardware, electrical, software and safety"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
           </div>
         </div>
       </Container>

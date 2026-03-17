@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Home, Info, Wrench, Mail, Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
@@ -21,8 +22,16 @@ export default function Navbar() {
         <Link
           href="/"
           className="flex items-center gap-2 text-xl font-bold tracking-tight text-brand-purple transition-colors duration-200 hover:text-brand-purple-hover dark:text-brand-blue dark:hover:text-brand-blue-muted"
+          aria-label="Infinite Hardware & Electrical - Home"
         >
-          IHE
+          <Image
+            src="/images/logo.jpeg"
+            alt="Infinite Hardware & Electrical logo"
+            width={120}
+            height={40}
+            className="h-9 w-auto object-contain sm:h-10"
+            priority
+          />
         </Link>
 
         <ul className="hidden items-center gap-1 md:flex md:gap-2">

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Container from "./ui/Container";
 import SectionTitle from "./ui/SectionTitle";
 import { Wrench, Zap, Code2, ShieldCheck } from "lucide-react";
@@ -37,6 +38,17 @@ export default function Services() {
           title="Our Services"
           subtitle="Four main divisions to meet your hardware, electrical, software and safety needs."
         />
+        <div className="relative mx-auto mb-12 max-w-4xl overflow-hidden rounded-2xl bg-zinc-200 shadow-md dark:bg-zinc-800">
+          <div className="relative aspect-[21/9] w-full">
+            <Image
+              src="/images/tools.png"
+              alt="Professional hardware and tools - quality equipment for industrial, mining and DIY use"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 768px) 100vw, 896px"
+            />
+          </div>
+        </div>
         <div className="grid gap-6 sm:grid-cols-2 sm:gap-8">
           {services.map((service, i) => (
             <div

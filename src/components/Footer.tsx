@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from "lucide-react";
 import Container from "./ui/Container";
 
@@ -23,9 +24,17 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link
               href="/"
-              className="text-xl font-bold tracking-tight text-brand-purple transition-colors hover:text-brand-purple-hover dark:text-brand-blue dark:hover:text-brand-blue-muted"
+              className="inline-flex items-center gap-2 text-xl font-bold tracking-tight text-brand-purple transition-colors hover:text-brand-purple-hover dark:text-brand-blue dark:hover:text-brand-blue-muted"
+              aria-label="Infinite Hardware & Electrical - Home"
             >
-              Infinite Hardware & Electrical
+              <Image
+                src="/images/logo.jpeg"
+                alt="Infinite Hardware & Electrical logo"
+                width={100}
+                height={34}
+                className="h-8 w-auto object-contain"
+              />
+              <span className="hidden sm:inline">Infinite Hardware & Electrical</span>
             </Link>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
               A wholly owned Zimbabwean company established in 2019. We provide

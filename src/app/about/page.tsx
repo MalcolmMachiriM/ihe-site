@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Container from "../../components/ui/Container";
 
 export default function About() {
@@ -13,6 +14,16 @@ export default function About() {
           software solutions. We are composed of four main divisions: Hardware and
           Tools, Electrical Supplies, Software products, and Safety equipment.
         </p>
+        <div className="mt-12 relative aspect-[2/1] max-w-4xl overflow-hidden rounded-2xl bg-zinc-200 dark:bg-zinc-800">
+          <Image
+            src="/images/team-office.jpg"
+            alt="IHE professionals at work - dedicated team delivering hardware, electrical and software solutions"
+            fill
+            className="object-cover object-center"
+            sizes="(max-width: 768px) 100vw, 896px"
+            priority
+          />
+        </div>
         <div className="mt-12 grid gap-8 sm:grid-cols-2">
           <div className="rounded-2xl border border-zinc-200 bg-white p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
             <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">

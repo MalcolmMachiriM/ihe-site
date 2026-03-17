@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Container from "./ui/Container";
 import SectionTitle from "./ui/SectionTitle";
 import { Shield, Award, Heart, Handshake } from "lucide-react";
@@ -37,6 +38,15 @@ export default function WhyChooseUs() {
           title="Core Values"
           subtitle="Underpinned by Innovation, Integrity, Diligence, Safety and Transparency."
         />
+        <div className="relative mb-12 aspect-[3/1] w-full max-w-4xl mx-auto overflow-hidden rounded-2xl bg-zinc-200 dark:bg-zinc-800">
+          <Image
+            src="/images/excavator.png"
+            alt="Industrial and mining operations - IHE serves earthworks, construction and heavy industry"
+            fill
+            className="object-cover object-center"
+            sizes="(max-width: 768px) 100vw, 896px"
+          />
+        </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {features.map((feature, i) => (
             <div

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowRight, Sparkles } from "lucide-react";
 import Container from "./ui/Container";
 import Button from "./ui/Button";
@@ -30,7 +31,20 @@ export default function Hero() {
       />
       <div className="absolute inset-0 -z-10 bg-[image:radial-gradient(circle_at_50%_120%,rgba(82,74,111,0.06),transparent_50%)] dark:bg-[image:radial-gradient(circle_at_50%_120%,rgba(110,181,224,0.08),transparent_50%)]" aria-hidden />
       <Container className="relative">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
+          <div className="order-2 lg:order-1 mx-auto max-w-xl lg:max-w-none">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-zinc-200 shadow-lg dark:bg-zinc-800">
+              <Image
+                src="/images/farm-equipment.png"
+                alt="Agricultural and industrial equipment - Infinite Hardware & Electrical serves mining, industrial and agricultural sectors"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+              />
+            </div>
+          </div>
+        <div className="order-1 lg:order-2 mx-auto max-w-3xl text-center lg:text-left">
           <div className="animate-fade-in-up inline-flex items-center gap-2 rounded-full border border-brand-blue-muted/60 bg-white/90 px-4 py-2 text-sm font-medium text-brand-purple shadow-sm backdrop-blur-sm transition-colors duration-300 dark:border-brand-blue/40 dark:bg-zinc-900/90 dark:text-brand-blue">
             <Sparkles className="h-4 w-4 text-brand-blue animate-shimmer dark:text-brand-blue-muted" aria-hidden />
             Trusted across Zimbabwe since 2019
@@ -61,6 +75,7 @@ export default function Hero() {
             </Button>
           </div>
         </div>
+      </div>
       </Container>
     </section>
   );

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { MessageCircle } from "lucide-react";
 import Container from "./ui/Container";
 import Button from "./ui/Button";
@@ -8,6 +9,16 @@ export default function CallToAction() {
       <Container>
         <div className="relative overflow-hidden rounded-3xl bg-brand-purple px-6 py-14 text-center shadow-xl transition-all duration-300 hover:shadow-2xl hover:shadow-brand-blue/20 dark:bg-brand-purple-hover sm:px-10 sm:py-16 md:px-12 md:py-20">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(110,181,224,0.2),transparent)] pointer-events-none" aria-hidden />
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 max-w-xs opacity-20 pointer-events-none hidden md:block">
+            <Image
+              src="/images/tech-setup.png"
+              alt=""
+              width={320}
+              height={240}
+              className="object-contain object-right"
+              aria-hidden
+            />
+          </div>
           <div className="relative mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-blue/30 text-white transition-transform duration-300 hover:scale-110">
             <MessageCircle className="h-8 w-8" aria-hidden />
           </div>
