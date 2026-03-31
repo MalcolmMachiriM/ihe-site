@@ -5,29 +5,29 @@ import SectionTitle from "./ui/SectionTitle";
 const testimonials = [
   {
     quote:
-      "Infinite Hardware and Electrical delivered beyond our expectations. Their team was professional, responsive, and the quality of products has had a measurable impact on our operations.",
-    name: "Sarah Mitchell",
-    role: "Director of Operations",
-    company: "TechCorp Ltd",
-    initials: "SM",
+      "IHE has been an invaluable partner for our mining operations. Their hardware and safety equipment is always top quality, and their team understands the demands of the Zimbabwean mining sector.",
+    name: "Tatenda Moyo",
+    role: "Operations Manager",
+    company: "Zimplats Holdings",
+    initials: "TM",
     color: "from-violet-500 to-purple-600",
   },
   {
     quote:
-      "Working with IHE has been a game-changer. They understood our hardware and electrical needs from day one and provided solutions that have streamlined our workflow.",
-    name: "James Chen",
-    role: "CTO",
-    company: "Innovate Solutions",
-    initials: "JC",
+      "We have sourced electrical supplies and PPE from IHE for over three years. Reliable, professional and always on time — exactly what we need to keep our projects running smoothly.",
+    name: "Chiedza Ndlovu",
+    role: "Site Engineer",
+    company: "Jacobson & Associates",
+    initials: "CN",
     color: "from-blue-500 to-cyan-500",
   },
   {
     quote:
-      "The expertise and dedication of the IHE team are unmatched. We consider them a true partner for our mining and industrial requirements.",
-    name: "Emily Rodriguez",
+      "Their software solutions have transformed how we manage assets across our depots. A proudly Zimbabwean company that truly delivers on its promises.",
+    name: "Farai Mutasa",
     role: "CEO",
-    company: "Growth Partners",
-    initials: "ER",
+    company: "Savanna Agri-Supply Co.",
+    initials: "FM",
     color: "from-emerald-500 to-teal-500",
   },
 ];
