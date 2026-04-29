@@ -1,4 +1,6 @@
 import Hero from "../components/Hero";
+import SectorsMarquee from "../components/SectorsMarquee";
+import CapabilitiesBand from "../components/CapabilitiesBand";
 import Services from "../components/Services";
 import AboutSection from "../components/AboutSection";
 import WhyChooseUs from "../components/WhyChooseUs";
@@ -9,7 +11,9 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <SectorsMarquee />
       <Services />
+      <CapabilitiesBand />
       <AboutSection />
       <WhyChooseUs />
       <Testimonials />

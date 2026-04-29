@@ -15,10 +15,10 @@ export default function ThemeToggle() {
   if (!mounted) {
     return (
       <div
-        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-zinc-200 bg-zinc-100/80 dark:border-zinc-700 dark:bg-zinc-800/80"
+        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900"
         aria-hidden
       >
-        <span className="h-5 w-5" />
+        <span className="h-4 w-4" />
       </div>
     );
   }
@@ -30,13 +30,22 @@ export default function ThemeToggle() {
       type="button"
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-zinc-200 bg-zinc-100/80 text-zinc-600 transition-all duration-300 hover:scale-105 hover:border-zinc-300 hover:bg-zinc-200/80 hover:text-zinc-900 focus:outline-none focus:ring-2 focus:ring-zinc-400 focus:ring-offset-2 dark:border-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:bg-zinc-700/80 dark:hover:text-zinc-50 dark:focus:ring-zinc-500 dark:focus:ring-offset-zinc-900"
+      className="group flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-700 transition-all duration-300 hover:scale-105 hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800"
     >
-      {isDark ? (
-        <Sun className="h-5 w-5 transition-transform duration-300" aria-hidden />
-      ) : (
-        <Moon className="h-5 w-5 transition-transform duration-300" aria-hidden />
-      )}
+      <span className="relative h-4 w-4">
+        <Sun
+          className={`absolute inset-0 h-4 w-4 transition-all duration-500 ${
+            isDark ? "rotate-0 scale-100 opacity-100" : "-rotate-90 scale-0 opacity-0"
+          }`}
+          aria-hidden
+        />
+        <Moon
+          className={`absolute inset-0 h-4 w-4 transition-all duration-500 ${
+            isDark ? "rotate-90 scale-0 opacity-0" : "rotate-0 scale-100 opacity-100"
+          }`}
+          aria-hidden
+        />
+      </span>
     </button>
   );
 }
