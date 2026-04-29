@@ -35,9 +35,9 @@ const channels = [
   {
     icon: Mail,
     label: "Email",
-    primary: "ihardware19@gmail.com",
-    secondary: "Replies within 24h",
-    href: "mailto:ihardware19@gmail.com",
+    primary: "sales@ihe.co.zw",
+    secondary: "ihardware19@gmail.com",
+    href: "mailto:sales@ihe.co.zw?cc=ihardware19@gmail.com",
   },
   {
     icon: MapPin,
@@ -333,29 +333,21 @@ export default function Contact() {
 
                 <div className="rounded-3xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900 sm:p-8">
                   <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-zinc-500">
-                    / Banking
+                    / Payments & Vendor onboarding
                   </p>
                   <p className="font-display mt-2 text-2xl tracking-tight text-zinc-900 dark:text-zinc-50">
-                    FBC Bank · Gweru
+                    Need our payment details?
                   </p>
-                  <dl className="mt-5 grid grid-cols-2 gap-x-4 gap-y-3 text-sm">
-                    <dt className="text-zinc-500">Account name</dt>
-                    <dd className="font-medium text-zinc-900 dark:text-zinc-50">
-                      Infinite H. & E.
-                    </dd>
-                    <dt className="text-zinc-500">Vendor #</dt>
-                    <dd className="font-medium text-zinc-900 dark:text-zinc-50">
-                      719287
-                    </dd>
-                    <dt className="text-zinc-500">Nostro</dt>
-                    <dd className="font-mono text-xs text-zinc-900 dark:text-zinc-50">
-                      4490122252019
-                    </dd>
-                    <dt className="text-zinc-500">ZWL</dt>
-                    <dd className="font-mono text-xs text-zinc-900 dark:text-zinc-50">
-                      5790122252019
-                    </dd>
-                  </dl>
+                  <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+                    For invoices, purchase orders or full vendor onboarding, email us and we&apos;ll send banking details and supporting documentation directly.
+                  </p>
+                  <a
+                    href="mailto:ihardware19@gmail.com?subject=Payment%20%26%20vendor%20onboarding"
+                    className="mt-5 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-900 link-underline dark:text-zinc-50"
+                  >
+                    Request details
+                    <span aria-hidden>→</span>
+                  </a>
                 </div>
               </div>
             </aside>

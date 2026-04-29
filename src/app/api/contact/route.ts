@@ -42,25 +42,50 @@ export async function POST(request: Request) {
       );
     }
 
-    const { error } = await resend.emails.send({
+    const cleanName = name.trim();
+    const cleanEmail = email.trim();
+    const cleanMessage = message.trim();
+
+    const { error: notifyError } = await resend.emails.send({
       from: CONTACT_FROM,
       to: CONTACT_TO,
-      replyTo: email.trim(),
-      subject: `Contact form: ${name.trim()}`,
-      text: message.trim(),
+      replyTo: cleanEmail,
+      subject: `Contact form: ${cleanName}`,
+      text: cleanMessage,
       html: `
-        <p><strong>From:</strong> ${escapeHtml(name.trim())} &lt;${escapeHtml(email.trim())}&gt;</p>
+        <p><strong>From:</strong> ${escapeHtml(cleanName)} &lt;${escapeHtml(cleanEmail)}&gt;</p>
         <p><strong>Message:</strong></p>
-        <pre style="white-space: pre-wrap; font-family: inherit;">${escapeHtml(message.trim())}</pre>
+        <pre style="white-space: pre-wrap; font-family: inherit;">${escapeHtml(cleanMessage)}</pre>
       `,
     });
 
-    if (error) {
-      console.error("Resend error:", error);
+    if (notifyError) {
+      console.error("Resend error (owner notification):", notifyError);
       return NextResponse.json(
         { error: "Failed to send email" },
         { status: 500 }
       );
+    }
+
+    const { error: confirmError } = await resend.emails.send({
+      from: CONTACT_FROM,
+      to: cleanEmail,
+      replyTo: CONTACT_TO,
+      subject: "We received your message — IHE",
+      text: `Hi ${cleanName},\n\nThanks for reaching out to IHE. We've received your message and a member of our team will get back to you within one working day.\n\nFor your records, here's what you sent:\n\n${cleanMessage}\n\n— The IHE team\nNo. 23 Lincoln Rd, L.I.S Gweru, Zimbabwe`,
+      html: `
+        <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #18181b; max-width: 560px;">
+          <p>Hi ${escapeHtml(cleanName)},</p>
+          <p>Thanks for reaching out to <strong>IHE</strong>. We've received your message and a member of our team will get back to you within one working day.</p>
+          <p style="color: #71717a; font-size: 14px;">For your records, here's what you sent:</p>
+          <pre style="white-space: pre-wrap; font-family: inherit; background: #f4f4f5; border-left: 3px solid #d4d4d8; padding: 12px 16px; border-radius: 4px;">${escapeHtml(cleanMessage)}</pre>
+          <p style="margin-top: 32px;">— The IHE team<br/><span style="color: #71717a; font-size: 14px;">No. 23 Lincoln Rd, L.I.S Gweru, Zimbabwe</span></p>
+        </div>
+      `,
+    });
+
+    if (confirmError) {
+      console.error("Resend error (visitor confirmation):", confirmError);
     }
 
     return NextResponse.json({ success: true });

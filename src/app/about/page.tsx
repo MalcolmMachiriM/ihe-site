@@ -206,51 +206,6 @@ export default function About() {
         </Container>
       </section>
 
-      {/* Banking details */}
-      <section className="py-20 sm:py-24">
-        <Container>
-          <div className="grid grid-cols-12 gap-8 lg:gap-16">
-            <div className="col-span-12 lg:col-span-5">
-              <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-brand-blue dark:text-brand-blue-muted">
-                <span className="h-px w-10 bg-brand-blue/60 dark:bg-brand-blue-muted/60" />
-                Banking · Vendor info
-              </div>
-              <h2 className="font-display mt-5 text-4xl leading-[1.04] tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-5xl">
-                Verified vendor.
-                <br />
-                <span className="italic text-brand-purple dark:text-brand-blue-muted">
-                  Easy payments.
-                </span>
-              </h2>
-              <p className="mt-5 max-w-md leading-relaxed text-zinc-600 dark:text-zinc-400">
-                Direct deposit details for clients placing orders. Email us for purchase orders or full vendor onboarding.
-              </p>
-            </div>
-            <div className="col-span-12 lg:col-span-7">
-              <dl className="grid grid-cols-1 gap-px overflow-hidden rounded-3xl border border-zinc-200 bg-zinc-200 dark:border-zinc-800 dark:bg-zinc-800 sm:grid-cols-2">
-                {[
-                  ["Bank", "FBC Bank"],
-                  ["Branch", "Gweru"],
-                  ["Account name", "Infinite Hardware and Electrical"],
-                  ["Vendor number", "719287"],
-                  ["Nostro account", "4490122252019"],
-                  ["ZWL account", "5790122252019"],
-                ].map(([label, value]) => (
-                  <div key={label} className="bg-white p-6 dark:bg-zinc-950">
-                    <dt className="font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-500">
-                      {label}
-                    </dt>
-                    <dd className="font-display mt-2 text-xl tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-2xl">
-                      {value}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-          </div>
-        </Container>
-      </section>
-
       {/* Quote strip */}
       <section className="border-y border-zinc-200 bg-brand-cream py-20 dark:border-zinc-800 dark:bg-zinc-950 sm:py-24">
         <Container>
