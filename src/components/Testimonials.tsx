@@ -1,6 +1,5 @@
 import { Quote, Star } from "lucide-react";
 import Container from "./ui/Container";
-import SectionTitle from "./ui/SectionTitle";
 
 const testimonials = [
   {
@@ -10,83 +9,99 @@ const testimonials = [
     role: "Operations Manager",
     company: "Zimplats Holdings",
     initials: "TM",
-    color: "from-violet-500 to-purple-600",
   },
   {
     quote:
-      "We have sourced electrical supplies and PPE from IHE for over three years. Reliable, professional and always on time — exactly what we need to keep our projects running smoothly.",
+      "We have sourced electrical supplies and PPE from IHE for over three years. Reliable, professional and always on time — exactly what we need to keep our projects running.",
     name: "Chiedza Ndlovu",
     role: "Site Engineer",
     company: "Jacobson & Associates",
     initials: "CN",
-    color: "from-blue-500 to-cyan-500",
   },
   {
     quote:
-      "Their software solutions have transformed how we manage assets across our depots. A proudly Zimbabwean company that truly delivers on its promises.",
+      "Their software solutions transformed how we manage assets across our depots. A proudly Zimbabwean company that delivers on its promises.",
     name: "Farai Mutasa",
     role: "CEO",
     company: "Savanna Agri-Supply Co.",
     initials: "FM",
-    color: "from-emerald-500 to-teal-500",
   },
 ];
 
 export default function Testimonials() {
+  const featured = testimonials[0];
+
   return (
-    <section className="relative py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(110,181,224,0.07),transparent)] dark:bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(107,95,138,0.1),transparent)]" aria-hidden />
+    <section className="relative overflow-hidden py-20 sm:py-24 lg:py-32">
+      <div className="absolute inset-0 -z-10 bg-brand-cream dark:bg-zinc-950" aria-hidden />
 
       <Container>
-        <SectionTitle
-          title="What Our Clients Say"
-          subtitle="Hear from organizations that have partnered with us."
-        />
+        <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-brand-blue dark:text-brand-blue-muted">
+          <span className="h-px w-10 bg-brand-blue/60 dark:bg-brand-blue-muted/60" />
+          Word from clients · Across Zimbabwe
+        </div>
 
-        <div className="grid gap-6 md:grid-cols-3 md:gap-8">
-          {testimonials.map((t, i) => (
-            <div
-              key={t.name}
-              className="group animate-fade-in-up relative flex flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-zinc-200/60 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:shadow-zinc-950/60"
-              style={{ animationDelay: `${i * 120}ms`, animationFillMode: "both" }}
-            >
-              {/* Top gradient bar */}
-              <div className={`h-1 w-full bg-gradient-to-r ${t.color} opacity-80`} aria-hidden />
+        <div className="mt-10 grid grid-cols-12 gap-8 lg:gap-12">
+          {/* Featured quote */}
+          <div className="col-span-12 lg:col-span-8">
+            <Quote className="h-12 w-12 fill-brand-accent text-brand-accent" />
+            <blockquote className="mt-6">
+              <p className="font-display text-3xl leading-[1.15] tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl md:text-5xl">
+                <span className="text-zinc-400 dark:text-zinc-600">&ldquo;</span>
+                {featured.quote}
+                <span className="text-zinc-400 dark:text-zinc-600">&rdquo;</span>
+              </p>
+              <footer className="mt-8 flex items-center gap-4">
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-ink font-mono text-sm font-bold text-white dark:bg-white dark:text-zinc-900">
+                  {featured.initials}
+                </span>
+                <div>
+                  <p className="font-medium text-zinc-900 dark:text-zinc-50">
+                    {featured.name}
+                  </p>
+                  <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">
+                    {featured.role} · {featured.company}
+                  </p>
+                </div>
+              </footer>
+            </blockquote>
+          </div>
 
-              <div className="flex flex-1 flex-col p-6 sm:p-8">
-                {/* Stars */}
-                <div className="flex gap-1 mb-4">
+          {/* Side stack */}
+          <div className="col-span-12 flex flex-col gap-6 lg:col-span-4">
+            {testimonials.slice(1).map((t, i) => (
+              <figure
+                key={t.name}
+                className="group rounded-3xl border border-zinc-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-zinc-800 dark:bg-zinc-900 animate-fade-in-up"
+                style={{ animationDelay: `${i * 120}ms`, animationFillMode: "both" }}
+              >
+                <div className="flex gap-1">
                   {[...Array(5)].map((_, j) => (
-                    <Star key={j} className="h-4 w-4 fill-amber-400 text-amber-400" aria-hidden />
+                    <Star
+                      key={j}
+                      className="h-3.5 w-3.5 fill-amber-400 text-amber-400"
+                    />
                   ))}
                 </div>
-
-                {/* Quote icon */}
-                <Quote className="h-8 w-8 text-brand-blue-muted/60 transition-colors duration-300 dark:text-brand-purple/40" aria-hidden />
-
-                {/* Quote text */}
-                <p className="mt-3 flex-1 text-zinc-600 leading-relaxed dark:text-zinc-400">
+                <blockquote className="mt-4 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
                   &ldquo;{t.quote}&rdquo;
-                </p>
-
-                {/* Author */}
-                <div className="mt-6 flex items-center gap-3 border-t border-zinc-100 pt-5 dark:border-zinc-800">
-                  <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${t.color} text-sm font-bold text-white shadow-sm`}>
+                </blockquote>
+                <figcaption className="mt-5 flex items-center gap-3 border-t border-zinc-100 pt-4 dark:border-zinc-800">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-ink font-mono text-xs font-bold text-white dark:bg-white dark:text-zinc-900">
                     {t.initials}
-                  </div>
+                  </span>
                   <div>
-                    <p className="font-semibold text-zinc-900 dark:text-zinc-50">
+                    <p className="text-sm font-medium text-zinc-900 dark:text-zinc-50">
                       {t.name}
                     </p>
-                    <p className="text-xs text-zinc-500 dark:text-zinc-400">
+                    <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-zinc-500 dark:text-zinc-400">
                       {t.role} · {t.company}
                     </p>
                   </div>
-                </div>
-              </div>
-            </div>
-          ))}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
       </Container>
     </section>

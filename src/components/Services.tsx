@@ -2,136 +2,151 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "./ui/Container";
 import SectionTitle from "./ui/SectionTitle";
-import { Wrench, Zap, Code2, ShieldCheck, ArrowRight } from "lucide-react";
+import { Wrench, Zap, Code2, ShieldCheck, ArrowUpRight } from "lucide-react";
 
 const services = [
   {
-    title: "Hardware and Tools",
+    num: "01",
+    title: "Hardware & Tools",
     description:
-      "A wide range of high-quality hardware and tools for professionals and DIY enthusiasts. Building materials, welding equipment, plumbing supplies, drills, hammers, crushers, industrial and mining tools, and more.",
+      "Building materials, welding kits, plumbing supplies, drills, hammers, jigsaws, crushers and the full industrial-tooling spectrum.",
     icon: Wrench,
     image: "/images/toolbox.jpg",
-    imageAlt: "Hardware and tools - professional equipment for construction and DIY",
-    accent: "from-amber-500/20 to-orange-500/10",
-    iconBg: "bg-amber-500/15 text-amber-600 dark:bg-amber-400/15 dark:text-amber-400",
-    tag: "Construction & Mining",
+    imageAlt: "Hardware and professional tooling",
+    keywords: ["Power tools", "Welding", "Plumbing", "Mining tools"],
+    span: "lg:col-span-7",
+    aspect: "aspect-[16/10]",
   },
   {
-    title: "Electrical Products",
+    num: "02",
+    title: "Electrical",
     description:
-      "Full range of electrical cables, lighting, motors, pumps, welding machinery, solar lights, security systems, inverters, power tools, AC and DC motors, cabling, magnetic separators and floatation machines.",
+      "Cables, motors, pumps, solar, inverters, security systems and floatation machines.",
     icon: Zap,
     image: "/images/solar.jpg",
-    imageAlt: "Solar farm and electrical power solutions - renewable energy and electrical products",
-    accent: "from-blue-500/20 to-cyan-500/10",
-    iconBg: "bg-blue-500/15 text-blue-600 dark:bg-blue-400/15 dark:text-blue-400",
-    tag: "Power & Electrical",
+    imageAlt: "Solar and electrical solutions",
+    keywords: ["Solar", "Inverters", "Cabling"],
+    span: "lg:col-span-5",
+    aspect: "aspect-[5/4]",
   },
   {
+    num: "03",
     title: "Software Solutions",
     description:
-      "In-house software developers and consultants for asset management, data entry, accounting, ERP, audit and event management systems, websites and custom solutions tailored to client needs.",
+      "In-house developers shipping asset management, ERP, audit, accounting, websites and bespoke systems.",
     icon: Code2,
     image: "/images/software.jpg",
-    imageAlt: "Software solutions and digital systems",
-    accent: "from-violet-500/20 to-purple-500/10",
-    iconBg: "bg-violet-500/15 text-violet-600 dark:bg-violet-400/15 dark:text-violet-400",
-    tag: "Digital & Tech",
+    imageAlt: "Custom software development",
+    keywords: ["ERP", "Asset Mgmt", "Audit", "Web"],
+    span: "lg:col-span-5",
+    aspect: "aspect-[5/4]",
   },
   {
-    title: "Safety Equipment",
+    num: "04",
+    title: "Safety & PPE",
     description:
-      "PPE and safety equipment including overalls, boots, gloves, eyewear, masks, helmets and all related safety products for industrial and mining applications.",
+      "Overalls, boots, gloves, eyewear, masks, helmets and all related industrial safety products.",
     icon: ShieldCheck,
     image: "/images/helmet.jpg",
-    imageAlt: "Safety equipment and PPE - helmets and protective gear",
-    accent: "from-emerald-500/20 to-green-500/10",
-    iconBg: "bg-emerald-500/15 text-emerald-600 dark:bg-emerald-400/15 dark:text-emerald-400",
-    tag: "PPE & Safety",
+    imageAlt: "Safety helmets and PPE equipment",
+    keywords: ["Overalls", "Helmets", "Eyewear", "Boots"],
+    span: "lg:col-span-7",
+    aspect: "aspect-[16/10]",
   },
 ];
 
 export default function Services() {
   return (
-    <section className="relative py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden">
-      {/* Section background */}
-      <div className="absolute inset-0 -z-10 bg-zinc-50/80 dark:bg-zinc-900/40" aria-hidden />
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_70%_50%_at_50%_100%,rgba(110,181,224,0.07),transparent)] dark:bg-[radial-gradient(ellipse_70%_50%_at_50%_100%,rgba(110,181,224,0.05),transparent)]" aria-hidden />
+    <section className="relative overflow-hidden py-20 sm:py-24 lg:py-32" id="services">
+      <div className="absolute inset-0 -z-10 bg-brand-cream dark:bg-zinc-950" aria-hidden />
 
       <Container>
-        <SectionTitle
-          title="Our Services"
-          subtitle="Four main divisions to meet your hardware, electrical, software and safety needs."
-        />
-
-        {/* Banner image with overlay */}
-        <div className="relative mx-auto mb-14 max-w-4xl overflow-hidden rounded-2xl shadow-xl animate-fade-in-up">
-          <div className="relative aspect-[21/9] w-full">
-            <Image
-              src="/images/tools.png"
-              alt="Professional hardware and tools - quality equipment for industrial, mining and DIY use"
-              fill
-              className="object-cover object-center"
-              sizes="(max-width: 768px) 100vw, 896px"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-brand-purple/50 via-transparent to-brand-blue/30" aria-hidden />
-            <div className="absolute inset-0 flex items-end p-6 sm:p-8">
-              <div className="animate-fade-in-up [animation-delay:200ms]">
-                <p className="text-xs font-semibold uppercase tracking-widest text-white/70">Infinite Hardware & Electrical</p>
-                <p className="mt-1 text-xl font-bold text-white sm:text-2xl">Quality products for every need</p>
-              </div>
+        <div className="mb-14 grid grid-cols-12 items-end gap-8">
+          <div className="col-span-12 lg:col-span-8">
+            <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-brand-blue dark:text-brand-blue-muted">
+              <span className="h-px w-10 bg-brand-blue/60 dark:bg-brand-blue-muted/60" />
+              What we do · 04 divisions
             </div>
+            <h2 className="font-display mt-5 text-4xl leading-[1.04] tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-5xl md:text-6xl">
+              One supplier.
+              <br />
+              <span className="italic text-brand-purple dark:text-brand-blue-muted">
+                Four
+              </span>{" "}
+              specialised divisions.
+            </h2>
+          </div>
+          <div className="col-span-12 lg:col-span-4">
+            <p className="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
+              Each division is staffed by people who know the gear, source it well,
+              and back it up after the sale.
+            </p>
+            <Link
+              href="/services"
+              className="mt-5 inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-900 link-underline dark:text-zinc-50"
+            >
+              View full catalogue
+              <ArrowUpRight className="h-3 w-3" />
+            </Link>
           </div>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 sm:gap-8">
-          {services.map((service, i) => (
-            <div
-              key={service.title}
-              className="group animate-fade-in-up overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-zinc-300/40 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-zinc-700 dark:hover:shadow-zinc-950/60"
-              style={{ animationDelay: `${i * 100}ms`, animationFillMode: "both" }}
+        <div className="grid grid-cols-12 gap-5">
+          {services.map((s, i) => (
+            <Link
+              key={s.title}
+              href="/services"
+              className={`group col-span-12 ${s.span} relative flex flex-col overflow-hidden rounded-3xl border border-zinc-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl dark:border-zinc-800 dark:bg-zinc-900 animate-fade-in-up`}
+              style={{ animationDelay: `${i * 80}ms`, animationFillMode: "both" }}
             >
-              {/* Image with gradient overlay */}
-              <div className="relative aspect-[16/10] w-full overflow-hidden bg-zinc-200 dark:bg-zinc-800">
+              <div className={`relative ${s.aspect} w-full overflow-hidden bg-zinc-200 dark:bg-zinc-800`}>
                 <Image
-                  src={service.image}
-                  alt={service.imageAlt}
+                  src={s.image}
+                  alt={s.imageAlt}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  sizes="(max-width: 640px) 100vw, 50vw"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-[1.2s] group-hover:scale-110"
                 />
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.accent} opacity-60 transition-opacity duration-300 group-hover:opacity-80`} aria-hidden />
-                {/* Tag badge */}
-                <div className="absolute top-3 left-3">
-                  <span className="inline-flex items-center rounded-full border border-white/20 bg-white/15 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm">
-                    {service.tag}
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/70 via-brand-ink/10 to-transparent" aria-hidden />
+
+                {/* Top-right number */}
+                <div className="absolute right-5 top-5 flex items-center gap-2 rounded-full bg-white/90 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-zinc-800 backdrop-blur">
+                  {s.num} · IHE
+                </div>
+
+                {/* Bottom title overlay */}
+                <div className="absolute inset-x-5 bottom-5 flex items-end justify-between gap-3">
+                  <div>
+                    <p className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-white/70">
+                      <s.icon className="h-3.5 w-3.5" />
+                      Division {s.num}
+                    </p>
+                    <h3 className="font-display mt-2 text-3xl leading-tight text-white sm:text-4xl">
+                      {s.title}
+                    </h3>
+                  </div>
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-zinc-900 transition-transform duration-300 group-hover:rotate-45">
+                    <ArrowUpRight className="h-4 w-4" />
                   </span>
                 </div>
               </div>
 
-              <div className="p-6 sm:p-8">
-                <div className="flex items-start gap-4">
-                  <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${service.iconBg} shadow-sm transition-all duration-300 group-hover:scale-110`}>
-                    <service.icon className="h-6 w-6" aria-hidden />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
-                      {service.title}
-                    </h3>
-                    <p className="mt-2 leading-relaxed text-zinc-600 dark:text-zinc-400">
-                      {service.description}
-                    </p>
-                    <Link
-                      href="/services"
-                      className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand-purple transition-all duration-200 hover:gap-2.5 hover:text-brand-purple-hover dark:text-brand-blue dark:hover:text-brand-blue-muted"
+              <div className="flex flex-1 flex-col justify-between gap-4 p-6 sm:p-7">
+                <p className="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
+                  {s.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {s.keywords.map((k) => (
+                    <span
+                      key={k}
+                      className="inline-flex items-center rounded-full border border-zinc-200 bg-zinc-50 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-zinc-600 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400"
                     >
-                      Learn more
-                      <ArrowRight className="h-3.5 w-3.5" aria-hidden />
-                    </Link>
-                  </div>
+                      {k}
+                    </span>
+                  ))}
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </Container>

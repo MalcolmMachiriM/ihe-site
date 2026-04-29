@@ -1,170 +1,204 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Sparkles, Wrench, Zap, Code2, ShieldCheck, TrendingUp, Users, Award } from "lucide-react";
+import {
+  ArrowUpRight,
+  Wrench,
+  Zap,
+  Code2,
+  ShieldCheck,
+  MapPin,
+  Phone,
+} from "lucide-react";
 import Container from "./ui/Container";
-import Button from "./ui/Button";
 
 const divisions = [
-  { label: "Hardware & Tools", icon: Wrench },
-  { label: "Electrical", icon: Zap },
-  { label: "Software", icon: Code2 },
-  { label: "Safety", icon: ShieldCheck },
-];
-
-const stats = [
-  { value: "2019", label: "Est.", icon: Award },
-  { value: "4", label: "Divisions", icon: TrendingUp },
-  { value: "100+", label: "Products", icon: Wrench },
-  { value: "ZW", label: "Owned", icon: Users },
+  { label: "Hardware & Tools", icon: Wrench, num: "01" },
+  { label: "Electrical", icon: Zap, num: "02" },
+  { label: "Software", icon: Code2, num: "03" },
+  { label: "Safety", icon: ShieldCheck, num: "04" },
 ];
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden py-16 sm:py-24 md:py-28 lg:py-32">
-      {/* Light mode background */}
+    <section className="relative overflow-hidden">
+      {/* Editorial background — light */}
       <div
-        className="absolute inset-0 -z-10 opacity-100 transition-opacity duration-500 dark:opacity-0"
-        style={{
-          backgroundImage: `
-            radial-gradient(ellipse 90% 70% at 50% -10%, rgba(82, 74, 111, 0.12), transparent 55%),
-            radial-gradient(ellipse 70% 50% at 90% 20%, rgba(110, 181, 224, 0.18), transparent 50%),
-            radial-gradient(ellipse 60% 40% at 10% 60%, rgba(168, 212, 240, 0.12), transparent 45%),
-            linear-gradient(to bottom, rgb(250 250 250), rgb(255 255 255))
-          `,
-        }}
+        className="absolute inset-0 -z-20 bg-brand-cream transition-opacity duration-500 dark:opacity-0"
         aria-hidden
       />
-      {/* Dark mode background */}
       <div
-        className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 dark:opacity-100"
-        style={{
-          backgroundImage: `
-            radial-gradient(ellipse 90% 70% at 50% -10%, rgba(107, 95, 138, 0.2), transparent 55%),
-            radial-gradient(ellipse 70% 50% at 90% 20%, rgba(126, 190, 232, 0.15), transparent 50%),
-            radial-gradient(ellipse 50% 40% at 10% 70%, rgba(90, 155, 201, 0.08), transparent 45%),
-            linear-gradient(to bottom, rgb(10 10 10), rgb(18 18 24))
-          `,
-        }}
+        className="absolute inset-0 -z-20 bg-zinc-950 opacity-0 transition-opacity duration-500 dark:opacity-100"
+        aria-hidden
+      />
+      {/* Grid overlay */}
+      <div
+        className="absolute inset-0 -z-10 bg-grid bg-grid-fade opacity-60 dark:opacity-40"
+        aria-hidden
+      />
+      {/* Mesh blob accents */}
+      <div
+        className="absolute -top-32 -right-20 -z-10 h-[480px] w-[480px] rounded-full bg-brand-blue/15 blur-3xl dark:bg-brand-blue/20"
+        aria-hidden
+      />
+      <div
+        className="absolute -bottom-32 -left-20 -z-10 h-[420px] w-[420px] rounded-full bg-brand-accent/10 blur-3xl dark:bg-brand-accent/15"
         aria-hidden
       />
 
-      {/* Decorative orbs */}
-      <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full opacity-[0.06] dark:opacity-[0.08] bg-brand-blue blur-3xl pointer-events-none" aria-hidden />
-      <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full opacity-[0.05] dark:opacity-[0.07] bg-brand-purple blur-3xl pointer-events-none" aria-hidden />
-
-      <Container className="relative">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2 lg:gap-20">
-
-          {/* Image column */}
-          <div className="order-2 lg:order-1 mx-auto w-full max-w-lg lg:max-w-none">
-            <div className="relative animate-fade-in-left [animation-delay:200ms]">
-              {/* Decorative ring behind main image */}
-              <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-brand-purple/20 via-brand-blue/15 to-transparent blur-xl dark:from-brand-purple/30 dark:via-brand-blue/20" aria-hidden />
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-zinc-200 shadow-2xl ring-1 ring-zinc-200/50 dark:bg-zinc-800 dark:ring-white/5 lg:aspect-[5/4]">
-                <Image
-                  src="/images/tools.png"
-                  alt="Professional hardware tools - Infinite Hardware & Electrical supplies quality equipment for mining, industrial and construction"
-                  fill
-                  className="object-cover transition-transform duration-700 hover:scale-105"
-                  sizes="(max-width: 1024px) 100vw, 55vw"
-                  priority
-                />
-                {/* Overlay gradient for depth */}
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/30 via-transparent to-transparent" aria-hidden />
-              </div>
-            </div>
-            <div className="mt-4 grid grid-cols-2 gap-3 sm:mt-6 animate-fade-in-up [animation-delay:400ms]">
-              <div className="relative aspect-[3/2] overflow-hidden rounded-xl bg-zinc-200 shadow-md dark:bg-zinc-800 group">
-                <Image
-                  src="/images/tools.jpg"
-                  alt="Professional tools and equipment"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  sizes="(max-width: 640px) 50vw, 25vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-purple/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden />
-              </div>
-              <div className="relative aspect-[3/2] overflow-hidden rounded-xl bg-zinc-200 shadow-md dark:bg-zinc-800 group">
-                <Image
-                  src="/images/solar.jpg"
-                  alt="Solar and electrical power solutions"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  sizes="(max-width: 640px) 50vw, 25vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-blue/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden />
-              </div>
-            </div>
-
-            {/* Stats row */}
-            <div className="mt-4 grid grid-cols-4 gap-2 sm:mt-5 animate-fade-in-up [animation-delay:500ms]">
-              {stats.map(({ value, label }) => (
-                <div
-                  key={label}
-                  className="flex flex-col items-center justify-center rounded-xl border border-zinc-200/80 bg-white/80 py-3 px-2 text-center shadow-sm backdrop-blur-sm dark:border-zinc-800 dark:bg-zinc-900/80"
-                >
-                  <span className="text-lg font-bold gradient-text sm:text-xl">{value}</span>
-                  <span className="mt-0.5 text-[10px] font-medium uppercase tracking-wider text-zinc-500 dark:text-zinc-400">{label}</span>
-                </div>
-              ))}
-            </div>
+      <Container className="relative pt-12 pb-20 sm:pt-16 sm:pb-24 lg:pt-24 lg:pb-32">
+        {/* Top thin meta bar */}
+        <div className="mb-10 flex flex-wrap items-center justify-between gap-4 border-b border-zinc-300/60 pb-4 font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-500 dark:border-zinc-800 dark:text-zinc-400 sm:mb-12">
+          <div className="flex items-center gap-2">
+            <span className="relative inline-flex h-2 w-2">
+              <span className="absolute inset-0 animate-ping rounded-full bg-emerald-500/60" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+            </span>
+            Open for orders · Mon–Sat
           </div>
+          <div className="hidden items-center gap-2 sm:flex">
+            <MapPin className="h-3 w-3" /> Gweru, Zimbabwe
+          </div>
+          <div className="flex items-center gap-2">
+            <Phone className="h-3 w-3" /> +263 776 339 832
+          </div>
+        </div>
 
-          {/* Text column */}
-          <div className="order-1 lg:order-2 mx-auto max-w-xl text-center lg:max-w-none lg:text-left">
-            <div className="animate-fade-in-up inline-flex items-center gap-2 rounded-full border border-brand-blue-muted/60 bg-white/90 px-4 py-2 text-sm font-medium text-brand-purple shadow-sm backdrop-blur-sm transition-colors duration-300 dark:border-brand-blue/40 dark:bg-zinc-900/90 dark:text-brand-blue">
-              <Sparkles className="h-4 w-4 text-brand-blue animate-shimmer dark:text-brand-blue-muted" aria-hidden />
-              Trusted across Zimbabwe since 2019
+        {/* Headline column */}
+        <div className="grid grid-cols-12 gap-y-12 lg:gap-x-10">
+          {/* Left — display headline */}
+          <div className="col-span-12 lg:col-span-8">
+            <div className="animate-fade-in-up flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-brand-blue dark:text-brand-blue-muted">
+              <span className="h-px w-10 bg-brand-blue/60 dark:bg-brand-blue-muted/60" />
+              Trusted in Zimbabwe since 2019
             </div>
 
-            <h1 className="mt-6 animate-fade-in-up text-3xl font-bold tracking-tight [animation-delay:100ms] [animation-fill-mode:both] sm:text-4xl md:text-5xl lg:text-6xl">
-              <span className="text-zinc-900 dark:text-zinc-50">Your trusted partner for </span>
-              <span className="gradient-text">hardware, electrical, software</span>
-              <span className="text-zinc-900 dark:text-zinc-50"> and safety</span>
+            <h1 className="font-display mt-6 animate-fade-in-up text-[44px] leading-[0.96] tracking-[-0.025em] text-zinc-900 [animation-delay:80ms] dark:text-zinc-50 sm:text-[64px] md:text-[88px] lg:text-[112px]">
+              The infinite
+              <br />
+              <span className="italic text-brand-purple dark:text-brand-blue-muted">
+                hardware
+              </span>{" "}
+              <span className="text-zinc-400 dark:text-zinc-600">·</span> electrical{" "}
+              <span className="text-zinc-400 dark:text-zinc-600">·</span>{" "}
+              <span className="italic text-brand-accent">safety</span>
+              <br />
+              partner.
             </h1>
 
-            <p className="mt-5 animate-fade-in-up text-base leading-relaxed text-zinc-600 dark:text-zinc-400 [animation-delay:200ms] [animation-fill-mode:both] sm:mt-6 sm:text-lg md:text-xl">
-              Infinite Hardware and Electrical is a wholly owned Zimbabwean company
-              established in 2019. We deliver cutting-edge products and a seamless
-              platform for mining, industrial, manufacturing, agricultural and business needs.
+            <p className="mt-8 max-w-2xl animate-fade-in-up text-base leading-relaxed text-zinc-600 [animation-delay:200ms] dark:text-zinc-400 sm:text-lg md:text-xl">
+              A wholly-owned Zimbabwean supplier of domestic hardware and tools,
+              electrical supplies, safety products and bespoke software solutions —
+              built for mining, industrial, manufacturing, agricultural and business clients.
             </p>
 
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 animate-fade-in-up [animation-delay:300ms] [animation-fill-mode:both] sm:mt-10 sm:flex-row sm:gap-5 lg:justify-start">
-              <Button
+            <div className="mt-10 flex flex-col items-stretch gap-3 animate-fade-in-up [animation-delay:300ms] sm:flex-row sm:items-center sm:gap-4">
+              <Link
                 href="/contact"
-                variant="primary"
-                className="group w-full sm:w-auto transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-brand-purple/25"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-brand-ink px-7 py-4 text-base font-medium text-white shadow-[0_12px_32px_-12px_rgba(13,14,18,0.5)] transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] dark:bg-white dark:text-zinc-900"
               >
-                Get Started
-                <ArrowRight className="ml-2 h-4 w-4 shrink-0 transition-transform duration-200 group-hover:translate-x-1" />
-              </Button>
-              <Button
-                href="/about"
-                variant="outline"
-                className="w-full sm:w-auto transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]"
+                Request a quote
+                <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </Link>
+              <Link
+                href="/services"
+                className="group inline-flex items-center justify-center gap-2 rounded-full border border-zinc-300 bg-white/60 px-7 py-4 text-base font-medium text-zinc-900 backdrop-blur transition-all duration-200 hover:bg-white dark:border-zinc-700 dark:bg-zinc-900/60 dark:text-zinc-100 dark:hover:bg-zinc-900"
               >
-                Learn More
-              </Button>
+                Browse divisions
+                <span
+                  aria-hidden
+                  className="font-mono text-xs text-zinc-400 transition-transform duration-200 group-hover:translate-x-1"
+                >
+                  →
+                </span>
+              </Link>
             </div>
+          </div>
 
-            <div className="mt-10 animate-fade-in-up border-t border-zinc-200 pt-8 [animation-delay:400ms] [animation-fill-mode:both] dark:border-zinc-700 sm:mt-12">
-              <p className="text-xs font-medium uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-                Our divisions
-              </p>
-              <div className="mt-4 flex flex-wrap items-center justify-center gap-x-2 gap-y-2 lg:justify-start">
-                {divisions.map(({ label, icon: Icon }) => (
-                  <Link
-                    key={label}
-                    href="/services"
-                    className="flex items-center gap-2 rounded-lg border border-zinc-200 bg-white/80 px-3 py-2 text-sm font-medium text-zinc-600 shadow-sm transition-all duration-200 hover:border-brand-blue/40 hover:bg-brand-blue-muted/10 hover:text-brand-purple hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900/80 dark:text-zinc-400 dark:hover:border-brand-blue/30 dark:hover:text-brand-blue"
-                  >
-                    <Icon className="h-3.5 w-3.5 text-brand-blue dark:text-brand-purple/80" aria-hidden />
-                    {label}
-                  </Link>
-                ))}
+          {/* Right — image stack collage */}
+          <div className="col-span-12 lg:col-span-4">
+            <div className="relative grid grid-cols-2 gap-3 animate-fade-in-right [animation-delay:200ms]">
+              <div className="relative col-span-2 aspect-[16/11] overflow-hidden rounded-3xl bg-zinc-200 shadow-2xl ring-1 ring-zinc-200/70 dark:bg-zinc-800 dark:ring-zinc-800/80">
+                <Image
+                  src="/images/man-electrical-fuses.jpg"
+                  alt="Electrical specialist working on industrial fuses"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  className="object-cover object-center transition-transform duration-700 hover:scale-105"
+                />
+                <div
+                  className="absolute inset-0 bg-gradient-to-tr from-brand-ink/60 via-brand-ink/10 to-transparent"
+                  aria-hidden
+                />
+                {/* Floating tag */}
+                <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
+                  <div>
+                    <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/70">
+                      Now serving
+                    </p>
+                    <p className="font-display mt-1 text-2xl leading-tight text-white">
+                      Mining · Industry
+                    </p>
+                  </div>
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white text-zinc-900">
+                    <ArrowUpRight className="h-4 w-4" />
+                  </span>
+                </div>
+              </div>
+
+              <div className="relative aspect-square overflow-hidden rounded-2xl bg-zinc-200 shadow-lg dark:bg-zinc-800">
+                <Image
+                  src="/images/solar.jpg"
+                  alt="Solar power systems"
+                  fill
+                  sizes="(max-width: 1024px) 50vw, 17vw"
+                  className="object-cover transition-transform duration-700 hover:scale-110"
+                />
+                <span className="absolute bottom-2 left-2 rounded-full bg-white/90 px-2 py-0.5 font-mono text-[9px] uppercase tracking-widest text-zinc-700 backdrop-blur">
+                  Solar
+                </span>
+              </div>
+              <div className="relative aspect-square overflow-hidden rounded-2xl bg-zinc-200 shadow-lg dark:bg-zinc-800">
+                <Image
+                  src="/images/helmet.jpg"
+                  alt="PPE and safety equipment"
+                  fill
+                  sizes="(max-width: 1024px) 50vw, 17vw"
+                  className="object-cover transition-transform duration-700 hover:scale-110"
+                />
+                <span className="absolute bottom-2 left-2 rounded-full bg-white/90 px-2 py-0.5 font-mono text-[9px] uppercase tracking-widest text-zinc-700 backdrop-blur">
+                  PPE
+                </span>
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Divisions strip — bottom */}
+        <div className="mt-16 grid grid-cols-2 divide-x divide-y divide-zinc-300/60 overflow-hidden rounded-3xl border border-zinc-300/60 bg-white/50 backdrop-blur sm:divide-y-0 sm:grid-cols-4 dark:divide-zinc-800 dark:border-zinc-800 dark:bg-zinc-950/50 animate-fade-in-up [animation-delay:400ms]">
+          {divisions.map(({ label, icon: Icon, num }) => (
+            <Link
+              key={label}
+              href="/services"
+              className="group flex flex-col gap-3 px-5 py-6 transition-colors duration-200 hover:bg-white dark:hover:bg-zinc-900/70 sm:px-6 sm:py-7"
+            >
+              <div className="flex items-center justify-between">
+                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-ink/5 text-brand-ink transition-all duration-200 group-hover:bg-brand-ink group-hover:text-white dark:bg-white/5 dark:text-white dark:group-hover:bg-white dark:group-hover:text-zinc-900">
+                  <Icon className="h-4 w-4" />
+                </span>
+                <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-zinc-400 dark:text-zinc-500">
+                  {num} / 04
+                </span>
+              </div>
+              <p className="font-display text-xl tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-2xl">
+                {label}
+              </p>
+              <span className="inline-flex items-center gap-1 font-mono text-[11px] uppercase tracking-[0.16em] text-zinc-500 transition-colors group-hover:text-brand-blue dark:text-zinc-400 dark:group-hover:text-brand-blue-muted">
+                Explore
+                <ArrowUpRight className="h-3 w-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </span>
+            </Link>
+          ))}
         </div>
       </Container>
     </section>

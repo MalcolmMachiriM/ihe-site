@@ -1,104 +1,120 @@
 import Image from "next/image";
 import Container from "./ui/Container";
-import SectionTitle from "./ui/SectionTitle";
 import { Shield, Award, Heart, Handshake } from "lucide-react";
 
-const features = [
+const values = [
   {
+    num: "01",
     title: "Integrity",
+    short: "We always do the right thing.",
     description:
-      "We always do the right thing. Our actions are guided by honesty and transparency in every client interaction.",
+      "Our actions are guided by honesty and transparency in every client interaction.",
     icon: Shield,
-    gradient: "from-violet-500/20 to-purple-600/10",
-    iconColor: "text-violet-600 dark:text-violet-400",
-    iconBg: "bg-violet-500/15 dark:bg-violet-400/15",
-    accent: "border-violet-200/60 dark:border-violet-800/40",
+    image: "/images/screws.jpg",
   },
   {
+    num: "02",
     title: "Excellence",
+    short: "We strive to give our best.",
     description:
-      "We strive to give our best. Quality is of the utmost importance and we meet the highest standards in everything we do.",
+      "Quality is non-negotiable. We meet the highest standards in everything we deliver.",
     icon: Award,
-    gradient: "from-amber-500/20 to-orange-500/10",
-    iconColor: "text-amber-600 dark:text-amber-400",
-    iconBg: "bg-amber-500/15 dark:bg-amber-400/15",
-    accent: "border-amber-200/60 dark:border-amber-800/40",
+    image: "/images/grinder.jpg",
   },
   {
+    num: "03",
     title: "Commitment",
+    short: "We are committed.",
     description:
-      "We are committed to our customers and to continuously self-improve. Dedicated to delivering timely solutions.",
+      "Dedicated to clients and to continuously improving — timely solutions, every time.",
     icon: Heart,
-    gradient: "from-rose-500/20 to-pink-500/10",
-    iconColor: "text-rose-600 dark:text-rose-400",
-    iconBg: "bg-rose-500/15 dark:bg-rose-400/15",
-    accent: "border-rose-200/60 dark:border-rose-800/40",
+    image: "/images/bolts.jpg",
   },
   {
+    num: "04",
     title: "Respect",
+    short: "We value our clients.",
     description:
-      "We value our clients. Underpinned by innovation, diligence, safety and transparency in all we do.",
+      "Underpinned by innovation, diligence, safety and transparency in everything we do.",
     icon: Handshake,
-    gradient: "from-emerald-500/20 to-teal-500/10",
-    iconColor: "text-emerald-600 dark:text-emerald-400",
-    iconBg: "bg-emerald-500/15 dark:bg-emerald-400/15",
-    accent: "border-emerald-200/60 dark:border-emerald-800/40",
+    image: "/images/reflectors.jpg",
   },
 ];
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 -z-10 bg-zinc-50/90 dark:bg-zinc-900/50" aria-hidden />
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_60%_40%_at_80%_20%,rgba(110,181,224,0.07),transparent)] dark:bg-[radial-gradient(ellipse_60%_40%_at_80%_20%,rgba(110,181,224,0.06),transparent)]" aria-hidden />
+    <section className="relative overflow-hidden py-20 sm:py-24 lg:py-32" id="values">
+      <div className="absolute inset-0 -z-10 bg-zinc-950" aria-hidden />
+      <div
+        className="absolute inset-0 -z-10 opacity-40"
+        style={{
+          backgroundImage: `radial-gradient(ellipse 60% 50% at 80% 20%, rgba(37,99,235,0.18), transparent 60%), radial-gradient(ellipse 60% 50% at 20% 80%, rgba(255,107,44,0.12), transparent 60%)`,
+        }}
+        aria-hidden
+      />
 
       <Container>
-        <SectionTitle
-          title="Core Values"
-          subtitle="Underpinned by Innovation, Integrity, Diligence, Safety and Transparency."
-        />
-
-        {/* Banner */}
-        <div className="relative mb-14 aspect-[3/1] w-full max-w-4xl mx-auto overflow-hidden rounded-2xl shadow-xl animate-fade-in-up">
-          <Image
-            src="/images/excavator.png"
-            alt="Industrial and mining operations - IHE serves earthworks, construction and heavy industry"
-            fill
-            className="object-cover object-center"
-            sizes="(max-width: 768px) 100vw, 896px"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-purple/60 via-brand-purple/20 to-brand-blue/30" aria-hidden />
-          <div className="absolute inset-0 flex items-center px-8 sm:px-12">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-white/60">Our Foundation</p>
-              <p className="mt-2 text-2xl font-bold text-white sm:text-3xl">Built on trust, driven by excellence</p>
+        <div className="mb-16 grid grid-cols-12 items-end gap-8">
+          <div className="col-span-12 lg:col-span-7">
+            <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-brand-blue-muted">
+              <span className="h-px w-10 bg-brand-blue-muted/60" />
+              Core values · The IHE way
             </div>
+            <h2 className="font-display mt-6 text-4xl leading-[1.04] tracking-tight text-white sm:text-5xl md:text-6xl">
+              Underpinned by{" "}
+              <span className="italic text-brand-accent-soft">
+                innovation,
+              </span>{" "}
+              integrity, diligence, safety, and transparency.
+            </h2>
+          </div>
+          <div className="col-span-12 lg:col-span-5">
+            <p className="text-base leading-relaxed text-zinc-400 sm:text-lg">
+              Four values shape every quote, every conversation, and every dispatch.
+            </p>
           </div>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
-          {features.map((feature, i) => (
+        <div className="grid grid-cols-1 gap-px overflow-hidden rounded-3xl bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+          {values.map((v, i) => (
             <div
-              key={feature.title}
-              className={`group animate-fade-in-up relative overflow-hidden rounded-2xl border bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl dark:bg-zinc-900 ${feature.accent}`}
-              style={{ animationDelay: `${i * 100}ms`, animationFillMode: "both" }}
+              key={v.title}
+              className="group relative flex flex-col bg-zinc-950 p-6 transition-all duration-500 hover:bg-zinc-900 sm:p-8 animate-fade-in-up overflow-hidden"
+              style={{ animationDelay: `${i * 80}ms`, animationFillMode: "both" }}
             >
-              {/* Gradient top accent */}
-              <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${feature.gradient.replace('/20', '').replace('/10', '')} opacity-80`} aria-hidden />
-              {/* Background gradient */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 transition-opacity duration-300 group-hover:opacity-100`} aria-hidden />
+              {/* Image reveal on hover */}
+              <div className="absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100" aria-hidden>
+                <Image
+                  src={v.image}
+                  alt=""
+                  fill
+                  sizes="(max-width: 1024px) 50vw, 25vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/85 to-zinc-950/40" aria-hidden />
+              </div>
 
-              <div className="relative p-6 sm:p-7">
-                <div className={`flex h-13 w-13 items-center justify-center rounded-xl ${feature.iconBg} ${feature.iconColor} shadow-sm transition-all duration-300 group-hover:scale-110`}>
-                  <feature.icon className="h-6 w-6" aria-hidden />
+              <div className="relative flex h-full flex-col justify-between gap-10">
+                <div className="flex items-start justify-between">
+                  <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-500 transition-colors group-hover:text-brand-accent-soft">
+                    {v.num} / 04
+                  </span>
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur transition-all duration-300 group-hover:bg-brand-accent group-hover:scale-110">
+                    <v.icon className="h-4 w-4" />
+                  </span>
                 </div>
-                <h3 className="mt-5 text-lg font-bold text-zinc-900 dark:text-zinc-50">
-                  {feature.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-                  {feature.description}
-                </p>
+
+                <div>
+                  <h3 className="font-display text-4xl leading-tight tracking-tight text-white sm:text-5xl">
+                    {v.title}
+                  </h3>
+                  <p className="mt-3 text-sm font-medium text-brand-blue-muted">
+                    {v.short}
+                  </p>
+                  <p className="mt-4 text-sm leading-relaxed text-zinc-400 transition-colors group-hover:text-zinc-200">
+                    {v.description}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
