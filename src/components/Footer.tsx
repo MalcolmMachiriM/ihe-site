@@ -127,11 +127,11 @@ export default function Footer() {
             <ul className="mt-5 space-y-4 text-sm">
               <li>
                 <a
-                  href="mailto:ihardware19@gmail.com"
+                  href="mailto:sales@ihe.co.zw"
                   className="group flex items-start gap-3 text-zinc-300 transition-colors hover:text-white"
                 >
                   <Mail className="mt-0.5 h-4 w-4 shrink-0" />
-                  ihardware19@gmail.com
+                  sales@ihe.co.zw
                 </a>
               </li>
               <li>
