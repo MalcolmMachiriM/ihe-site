@@ -36,8 +36,8 @@ const channels = [
     icon: Mail,
     label: "Email",
     primary: "sales@ihe.co.zw",
-    secondary: "ihardware19@gmail.com",
-    href: "mailto:sales@ihe.co.zw?cc=ihardware19@gmail.com",
+    secondary: "",
+    href: "mailto:sales@ihe.co.zw",
   },
   {
     icon: MapPin,
@@ -154,9 +154,11 @@ export default function Contact() {
                   <p className="font-display mt-2 text-2xl leading-tight tracking-tight text-zinc-900 dark:text-zinc-50">
                     {primary}
                   </p>
-                  <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
-                    {secondary}
-                  </p>
+                  {secondary ? (
+                    <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
+                      {secondary}
+                    </p>
+                  ) : null}
                 </>
               );
 
@@ -342,7 +344,7 @@ export default function Contact() {
                     For invoices, purchase orders or full vendor onboarding, email us and we&apos;ll send banking details and supporting documentation directly.
                   </p>
                   <a
-                    href="mailto:ihardware19@gmail.com?subject=Payment%20%26%20vendor%20onboarding"
+                    href="mailto:sales@ihe.co.zw?subject=Payment%20%26%20vendor%20onboarding"
                     className="mt-5 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-900 link-underline dark:text-zinc-50"
                   >
                     Request details

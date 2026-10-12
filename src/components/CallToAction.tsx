@@ -107,7 +107,7 @@ export default function CallToAction() {
               </li>
               <li>
                 <a
-                  href="mailto:ihardware19@gmail.com"
+                  href="mailto:sales@ihe.co.zw"
                   className="group flex items-center gap-4 px-6 py-5 transition-colors hover:bg-zinc-50 dark:hover:bg-zinc-900"
                 >
                   <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-ink/5 text-brand-ink dark:bg-white/10 dark:text-white">
@@ -118,7 +118,7 @@ export default function CallToAction() {
                       Email
                     </p>
                     <p className="text-sm font-medium text-zinc-900 dark:text-zinc-50">
-                      ihardware19@gmail.com
+                      sales@ihe.co.zw
                     </p>
                   </div>
                   <ArrowUpRight className="h-4 w-4 text-zinc-400 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-zinc-900 dark:group-hover:text-zinc-100" />
