@@ -59,7 +59,7 @@ export default function Hero() {
             <MapPin className="h-3 w-3" /> Gweru, Zimbabwe
           </div>
           <div className="flex items-center gap-2">
-            <Phone className="h-3 w-3" /> +263 776 339 832
+            <Phone className="h-3 w-3" /> +263 774 411 166
           </div>
         </div>
 

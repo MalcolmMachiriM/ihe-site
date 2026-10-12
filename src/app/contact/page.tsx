@@ -28,9 +28,9 @@ const channels = [
   {
     icon: Phone,
     label: "Direct",
-    primary: "+263 776 339 832",
+    primary: "+263 774 411 166",
     secondary: "+263 712 167 281",
-    href: "tel:+263776339832",
+    href: "tel:+263774411166",
   },
   {
     icon: Mail,

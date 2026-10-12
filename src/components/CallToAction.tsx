@@ -57,11 +57,11 @@ export default function CallToAction() {
                 <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
               <a
-                href="tel:+263776339832"
+                href="tel:+263774411166"
                 className="group inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-7 py-4 text-base font-medium text-white transition-all duration-200 hover:bg-white/10"
               >
                 <Phone className="h-4 w-4" />
-                +263 776 339 832
+                +263 774 411 166
               </a>
             </div>
           </div>
