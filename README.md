@@ -2,7 +2,8 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+1. Copy `.env.example` to `.env.local` and fill in Resend plus Ops intake keys.
+2. Run the development server:
 
 ```bash
 npm run dev
@@ -15,6 +16,10 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+### Contact form → IHE Ops
+
+The contact API posts validated leads to IHE Ops (`OPS_INTAKE_URL` + `OPS_INTAKE_API_KEY`, matching Ops `INTAKE_API_KEY`). If Ops is unreachable, emails still go out via Resend so the lead is not lost.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 

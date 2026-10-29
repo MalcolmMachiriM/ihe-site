@@ -76,7 +76,8 @@ export default function Contact() {
           body: JSON.stringify({
             name: name.trim(),
             email: email.trim(),
-            message: `[${subject}] ${message.trim()}`,
+            subject,
+            message: message.trim(),
           }),
         });
         const data = await res.json().catch(() => ({}));
